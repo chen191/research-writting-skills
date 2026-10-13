@@ -1,0 +1,134 @@
+{
+  "repository": "zLanqing/codex-claude-academic-skills",
+  "commit": "7ed6377f0efb6a38951b48ef03b19d996e454b1f",
+  "license": "MIT",
+  "upstream_files": {
+    "LICENSE": {
+      "upstream_path": "LICENSE",
+      "git_blob": "8f77bb4a0492aa83bf9d65cd03c877e529194da6",
+      "sha256": "36567c1c66b9971768a8693f6c6bc230655c3cbd7a8ec3de754e549398af8c00",
+      "bytes": 1066
+    },
+    "upstream-SKILL.md": {
+      "upstream_path": "research-writing-skill/SKILL.md",
+      "git_blob": "5010f9b8dc6e28dd53e8854014dcdee9257ebca7",
+      "sha256": "ce5f25f99ebb01e6d12624dbee1967226ed5b59aa914496bf7b998e9a31a6630",
+      "bytes": 4317
+    },
+    "references/paper-writing/author_profile/compression_patterns.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/author_profile/compression_patterns.md",
+      "git_blob": "f573bd8f38cb8045e4c0d289fb0de626f5379dae",
+      "sha256": "caa08cadf565ea36e124a3b942ee6474e231cd4afe79b9ec91faabce0767384a",
+      "bytes": 4791
+    },
+    "references/paper-writing/author_profile/editorial_principles.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/author_profile/editorial_principles.md",
+      "git_blob": "96a29bde84bc1f48342a533d0d817f7a1c18d1c9",
+      "sha256": "3e33ffccd221327181c30fed53681adc9b7a03019b052ae7e306b7f12c3be421",
+      "bytes": 14021
+    },
+    "references/paper-writing/author_profile/intervention_types.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/author_profile/intervention_types.md",
+      "git_blob": "90348a816844ea030a32714912286c213294e5bf",
+      "sha256": "f9901c0b6bc312fa30c25eb98b9c7f0ddfd5ead9974a6d49b196b302f8212ba9",
+      "bytes": 3771
+    },
+    "references/paper-writing/author_profile/rhetorical_moves.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/author_profile/rhetorical_moves.md",
+      "git_blob": "a034d423fec02e43d11c8b5840b96e7ba01cab21",
+      "sha256": "9d3390b0abcddae7147e9919a27fef16ba9548411edd474d3883bb6d0f920dd5",
+      "bytes": 4960
+    },
+    "references/paper-writing/author_profile/voice_profile.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/author_profile/voice_profile.md",
+      "git_blob": "f4b98de692aea0d3ddeef62f74413c17ba2052c8",
+      "sha256": "b4d792800429fdef43f386fcf85349327eff81d1e9b024aaa712b66263ca8cac",
+      "bytes": 6160
+    },
+    "references/paper-writing/brainstorming_guide.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/brainstorming_guide.md",
+      "git_blob": "7ea4a8eb42d1961448c4f3668f3821716a137e2d",
+      "sha256": "16e68afa654affc8cc5f38774756a77a32a8817f82dce5f35f165878bce61e3b",
+      "bytes": 15054
+    },
+    "references/paper-writing/figure_synthesis_guide.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/figure_synthesis_guide.md",
+      "git_blob": "152b0c2d25032d42dd62662811cd36557e59ef1e",
+      "sha256": "8f324846c1b5a95c64fe05b9e2479a14f25015fd2e177b1372dc1cee452ffac2",
+      "bytes": 16780
+    },
+    "references/paper-writing/figure_templates/figure_spec_template.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/figure_templates/figure_spec_template.md",
+      "git_blob": "a838600340bb40205eea3c3e4d0ed98ab41dda34",
+      "sha256": "d6adf533baaf6bc34ba2f48ac2b6b357a6a2b65926457ec835e6398d313d1474",
+      "bytes": 3458
+    },
+    "references/paper-writing/figure_templates/prompt_templates.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/figure_templates/prompt_templates.md",
+      "git_blob": "9a361520f43e399142b0fde4840ad7e3523c3cd0",
+      "sha256": "bb890a41fc0bfa40f37b0763f36d4edb5734074fa47a34a89a3c5cb12e4cab58",
+      "bytes": 9633
+    },
+    "references/paper-writing/figure_templates/tikz_skeletons.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/figure_templates/tikz_skeletons.md",
+      "git_blob": "fbf07e765c962a2d4bdaa739d811edb72b83dab6",
+      "sha256": "6916a3b82702b634bf97c6e56e50405351f69f625b0df830cb697b8ffdb8e40b",
+      "bytes": 7397
+    },
+    "references/paper-writing/figure_templates/venue_styles.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/figure_templates/venue_styles.md",
+      "git_blob": "69e5b544a1c773d1ce9fef21c55a070508ef4cc9",
+      "sha256": "1f3ab5d8489e12fbcb9fae85a4d1a941d91b9c100b450cafed6a582a596fef84",
+      "bytes": 5072
+    },
+    "references/paper-writing/section_rhetorical_moves/design.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/section_rhetorical_moves/design.md",
+      "git_blob": "82fb071cb77922610ef4293d0928d6b95990d640",
+      "sha256": "c9a091a0e9825c84310daf6d82d46128602de1a019daea7d1f9af5255a5ff587",
+      "bytes": 3283
+    },
+    "references/paper-writing/section_rhetorical_moves/evaluation.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/section_rhetorical_moves/evaluation.md",
+      "git_blob": "6e0c95ae45802015e585a985c0f14966a4d58ae6",
+      "sha256": "9ad3902ddbfca73eb8dc0cc5fee374b2e9ec30a4c91634664f0b042bf360fa29",
+      "bytes": 6679
+    },
+    "references/paper-writing/section_rhetorical_moves/introduction.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/section_rhetorical_moves/introduction.md",
+      "git_blob": "571d8967a4e1fffc1799b1bad5a4934b4e66f050",
+      "sha256": "03ca9eb0aaa1ab5d5913b7b624c77494b8f0bb82e7263a2f5fa7e1c58c06abf7",
+      "bytes": 6666
+    },
+    "references/paper-writing/section_rhetorical_moves/related_work.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/section_rhetorical_moves/related_work.md",
+      "git_blob": "9a77a80e296e21019aa8d7a97804b3f9a7580b53",
+      "sha256": "8c4e378f471d7896e0d6224a10b9a5cbf6c180bf1d503ab20860306a57cabdc1",
+      "bytes": 3122
+    },
+    "references/paper-writing/writing_checklists/design_questions.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/writing_checklists/design_questions.md",
+      "git_blob": "a07cd3fc2e8720ca9043cd8398e6ec6e06ce9b3e",
+      "sha256": "dae22aa04aa1dccd193dd7baa7caf47e5c025a388d56dff02476c46d78ba4251",
+      "bytes": 2037
+    },
+    "references/paper-writing/writing_checklists/evaluation_questions.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/writing_checklists/evaluation_questions.md",
+      "git_blob": "6979129fcd7cfb42cd42cbeee446c4fc22cf7669",
+      "sha256": "4ae3d68cb8c12842617005c8bd3c030605c2a4220dc2c85357198b13e0c39d86",
+      "bytes": 3009
+    },
+    "references/paper-writing/writing_checklists/intro_questions.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/writing_checklists/intro_questions.md",
+      "git_blob": "3cc652cc91ed4b4bdd7a25e1f81356a3e33154b1",
+      "sha256": "a69da2050f6ca93239badfdead8f50bdb9be544e9965528e6b41e998579b409b",
+      "bytes": 2552
+    },
+    "references/paper-writing/writing_checklists/related_work_questions.md": {
+      "upstream_path": "research-writing-skill/references/paper-writing/writing_checklists/related_work_questions.md",
+      "git_blob": "9bd64c75c24ece634a6cdd995f550ea58d6c4822",
+      "sha256": "7261a70fbaa9b3e319f40fa4434b5f6ba8cf92da9b1ac29a8d83cc2e3c60200b",
+      "bytes": 2036
+    }
+  },
+  "adaptation": "Standalone Aygent frontend manuscript workflow; no prior Scout/ARIS package dependency."
+}

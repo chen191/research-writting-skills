@@ -1,5 +1,9 @@
 # Academic Skills for Claude Code & Codex
 
+## Aygent 线上改造版
+
+本 fork 另收录 [`research-writing-aygent`](research-writing-aygent/README.md)：从 Aygent 当前线上挂载版本完整导出的独立论文写作工作流，包含来源、27 个原始文件的校验清单和运行依赖说明。原有三个技能包保持不变；该改造版依赖宿主能力及现有 PDF 服务，不是通用离线程序，也不会因 Git 更新自动同步到线上。
+
 > 三个面向中国科研工作者的学术技能包，覆盖论文写作、学术 Office 文档生成与科研计算三大场景。
 > 所有 skill 均可在 **Claude Code** 和 **Codex** 两个平台上直接使用。
 

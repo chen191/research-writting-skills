@@ -1,0 +1,198 @@
+{
+  "skillName": "research-writing-aygent",
+  "skillId": "62997643-1164-488b-91c0-25011dc7b96d",
+  "contentId": "19b01ad6-9955-4d40-ad63-d15f1f55ddb4",
+  "exportedAt": "2026-10-13T06:22:13.901000+00:00",
+  "source": "Read-only export of the currently attached online Skill; not regenerated from upstream.",
+  "files": [
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "LICENSE",
+      "sha256": "36567c1c66b9971768a8693f6c6bc230655c3cbd7a8ec3de754e549398af8c00",
+      "sizeBytes": 1066
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/aygent-workflow.md",
+      "sha256": "2927284d247e73d6a5be513d75f14ef587a046c802220bdd5ebf0c59e931b558",
+      "sizeBytes": 4855
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/author_profile/compression_patterns.md",
+      "sha256": "caa08cadf565ea36e124a3b942ee6474e231cd4afe79b9ec91faabce0767384a",
+      "sizeBytes": 4791
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/author_profile/editorial_principles.md",
+      "sha256": "3e33ffccd221327181c30fed53681adc9b7a03019b052ae7e306b7f12c3be421",
+      "sizeBytes": 14021
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/author_profile/intervention_types.md",
+      "sha256": "f9901c0b6bc312fa30c25eb98b9c7f0ddfd5ead9974a6d49b196b302f8212ba9",
+      "sizeBytes": 3771
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/author_profile/rhetorical_moves.md",
+      "sha256": "9d3390b0abcddae7147e9919a27fef16ba9548411edd474d3883bb6d0f920dd5",
+      "sizeBytes": 4960
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/author_profile/voice_profile.md",
+      "sha256": "b4d792800429fdef43f386fcf85349327eff81d1e9b024aaa712b66263ca8cac",
+      "sizeBytes": 6160
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/brainstorming_guide.md",
+      "sha256": "16e68afa654affc8cc5f38774756a77a32a8817f82dce5f35f165878bce61e3b",
+      "sizeBytes": 15054
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/figure_synthesis_guide.md",
+      "sha256": "8f324846c1b5a95c64fe05b9e2479a14f25015fd2e177b1372dc1cee452ffac2",
+      "sizeBytes": 16780
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/figure_templates/figure_spec_template.md",
+      "sha256": "d6adf533baaf6bc34ba2f48ac2b6b357a6a2b65926457ec835e6398d313d1474",
+      "sizeBytes": 3458
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/figure_templates/prompt_templates.md",
+      "sha256": "bb890a41fc0bfa40f37b0763f36d4edb5734074fa47a34a89a3c5cb12e4cab58",
+      "sizeBytes": 9633
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/figure_templates/tikz_skeletons.md",
+      "sha256": "6916a3b82702b634bf97c6e56e50405351f69f625b0df830cb697b8ffdb8e40b",
+      "sizeBytes": 7397
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/figure_templates/venue_styles.md",
+      "sha256": "1f3ab5d8489e12fbcb9fae85a4d1a941d91b9c100b450cafed6a582a596fef84",
+      "sizeBytes": 5072
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/section_rhetorical_moves/design.md",
+      "sha256": "c9a091a0e9825c84310daf6d82d46128602de1a019daea7d1f9af5255a5ff587",
+      "sizeBytes": 3283
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/section_rhetorical_moves/evaluation.md",
+      "sha256": "9ad3902ddbfca73eb8dc0cc5fee374b2e9ec30a4c91634664f0b042bf360fa29",
+      "sizeBytes": 6679
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/section_rhetorical_moves/introduction.md",
+      "sha256": "03ca9eb0aaa1ab5d5913b7b624c77494b8f0bb82e7263a2f5fa7e1c58c06abf7",
+      "sizeBytes": 6666
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/section_rhetorical_moves/related_work.md",
+      "sha256": "8c4e378f471d7896e0d6224a10b9a5cbf6c180bf1d503ab20860306a57cabdc1",
+      "sizeBytes": 3122
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/writing_checklists/design_questions.md",
+      "sha256": "dae22aa04aa1dccd193dd7baa7caf47e5c025a388d56dff02476c46d78ba4251",
+      "sizeBytes": 2037
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/writing_checklists/evaluation_questions.md",
+      "sha256": "4ae3d68cb8c12842617005c8bd3c030605c2a4220dc2c85357198b13e0c39d86",
+      "sizeBytes": 3009
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/writing_checklists/intro_questions.md",
+      "sha256": "a69da2050f6ca93239badfdead8f50bdb9be544e9965528e6b41e998579b409b",
+      "sizeBytes": 2552
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "references/paper-writing/writing_checklists/related_work_questions.md",
+      "sha256": "7261a70fbaa9b3e319f40fa4434b5f6ba8cf92da9b1ac29a8d83cc2e3c60200b",
+      "sizeBytes": 2036
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "scripts/paper_result.py",
+      "sha256": "6aa118cdf75707904860226cf924512bd03cc479ab82b32613694997494aacba",
+      "sizeBytes": 591
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "scripts/paper.py",
+      "sha256": "0b21add57637ab9bbd03e8272e1d9854b9e88851589624287c427d9b2774ea58",
+      "sizeBytes": 14212
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "scripts/service-endpoints.json",
+      "sha256": "36a82b2fc06969003e1f2216c95fbd285882c2f8d63d5eafba1a02b103dd73eb",
+      "sizeBytes": 43
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "SKILL.md",
+      "sha256": "b0e6b49cd1b42630d804cdbf877e2b35da8b336ced95eb070f59d863147e1db0",
+      "sizeBytes": 6624
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "source-manifest.json",
+      "sha256": "8602289fdd2f4e08705dc3e7354c0a1010223c4df2251eeae67ae88530a63888",
+      "sizeBytes": 7623
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "upstream-SKILL.md",
+      "sha256": "ce5f25f99ebb01e6d12624dbee1967226ed5b59aa914496bf7b998e9a31a6630",
+      "sizeBytes": 4317
+    }
+  ]
+}
