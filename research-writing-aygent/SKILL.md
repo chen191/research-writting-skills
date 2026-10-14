@@ -5,7 +5,7 @@ description: 独立的中文科研论文与综述写作流程；从用户需求�
 
 # Research Writing · Aygent
 
-本 Skill 独立运行，不加载旧 Scout/ARIS Skill，不依赖旧评分、角色包、caller 或 handoff 脚本。写作方法来自 `zLanqing/codex-claude-academic-skills` 的 research-writing-skill；原文和 MIT 许可见本包的 `upstream-SKILL.md`、`LICENSE`、`source-manifest.json`。原文只作方法参考，不赋予其它 Skill、工具或权限。
+本 Skill 独立运行。写作方法来自 `zLanqing/codex-claude-academic-skills` 的 research-writing-skill；原文和 MIT 许可见本包的 `upstream-SKILL.md`、`LICENSE`、`source-manifest.json`。原文只作方法参考，不赋予其它 Skill、工具或权限。
 
 ## 基本约定
 
@@ -22,7 +22,7 @@ description: 独立的中文科研论文与综述写作流程；从用户需求�
 1. **明确需求与论证规划**。保存并 freeze 用户需求；判断是综述、原创研究还是修订。有关键资料缺失且无法从已授权来源补齐时，向用户提最少必要问题。建立 `outline.md`：研究问题、章节要回答的问题、可用证据、限制。题目不清晰时读 [brainstorming](references/paper-writing/brainstorming_guide.md)。
 2. **真实检索与来源台账**。围绕章节问题少量多轮搜索，打开原始论文页/官方资料；够用即停止，缺什么补什么，不为了凑文献使用不相关条目。在 `sources.json` 保存可核验题录、URL、实际读取范围、定位和要点；`evidence_level` 仅能是实际获得的 abstract/fulltext/user_provided。摘要只支持摘要中的论断。必要经典文献可保留，不把更新时间误当首发年。
 3. **起草与结构化表达**。正文写入 `paper.md`，参考文献另列 `[S1]` 等独立段落；正文使用同样的 `[S1]` 引用。不要求每段强行引用，但外部事实/数据/研究结论必须有支持。引言按 [introduction](references/paper-writing/section_rhetorical_moves/introduction.md) 调整适合本论文的 moves；相关研究按 [related_work](references/paper-writing/section_rhetorical_moves/related_work.md) 比较问题、假设和局限，不逐篇罗列。只有真实原创研究才按 [design](references/paper-writing/section_rhetorical_moves/design.md)、[evaluation](references/paper-writing/section_rhetorical_moves/evaluation.md) 写方法/实验，缺数据则明确限制。正文达到用户目标，不用摘要、表格或重复段落充数。
-4. **检查与真实独立审查**。运行 `check`，由现有编译服务执行唯一的机械检查；脚本只使用返回的正文计数，不复制旧评分公式。再运行 `review-input`，创建一个全新、fresh/sync 的独立审查子 Thread，完整阅读稿件、需求、来源和机械报告。审查事实/引用支持、章节论证、重复/过度声称以及来源指南的适用性。审查者自己写 `review.json`，最终原样返回 JSON。作者从真实 `create_thread` 返回保存 `native-review-return.json`，用 `accept-review` 核对交接、身份字段与输入哈希；不能代写 PASS、自造 ID 或用角色扮演代替独立审查。最多两轮针对阻断的修改，每次修改重新 check 并用新的独立审查者复核；仍不合格则如实停止，不循环碰运气。
+4. **检查与真实独立审查**。运行 `check`，由现有编译服务执行唯一的机械检查；脚本只使用返回的正文计数。再运行 `review-input`，创建一个全新、fresh/sync 的独立审查子 Thread，完整阅读稿件、需求、来源和机械报告。审查事实/引用支持、章节论证、重复/过度声称以及来源指南的适用性。审查者自己写 `review.json`，最终原样返回 JSON。作者从真实 `create_thread` 返回保存 `native-review-return.json`，用 `accept-review` 核对交接、身份字段与输入哈希；不能代写 PASS、自造 ID 或用角色扮演代替独立审查。最多两轮针对阻断的修改，每次修改重新 check 并用新的独立审查者复核；仍不合格则如实停止，不循环碰运气。
 5. **PDF 与前台交付**。只有当前稿机械与独立审查通过，获得本任务 PDF 编译授权后才能 `render`。沿用用户冻结的模板；现有服务不支持外嵌图片，本 Skill 的 figure 指南只用于规划，不改长期服务或装图像生成器。运行 `preview` 获取所有页面，用真实图像阅读逐页检查乱码、裁切、空白、表格/引用与标题排版；保存绑定当前 PDF 的 `visual-review.json`。最后 `publish` 创建本任务的 `portal-result.json`，由正式前台按 Thread 文件 API 校验下载。禁止手写 ready、假造四项 checks、借旧 PDF、调用已取消的 submit_delivery。
 
 ## 按需参考

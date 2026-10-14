@@ -49,7 +49,7 @@ freeze 是本包的需求 prepare，生成不可替换的 request.json。当前�
 {"thread_id":"实际threadId","run_id":"实际runId","status":"completed","error":null,"answer":"子Thread最终原样返回的review.json文本"}
 ```
 
-写到 native-review-return.json 后 accept-review；不能从磁盘内容自行伪造“工具返回”。本机离线只能校验结构与哈希，真实性须由宿主实际 History 中的调用、子 Thread 与 Run 回读确认。相同独立审查覆盖整篇，不继承旧角色单号/评分/资格流程。
+写到 native-review-return.json 后 accept-review；不能从磁盘内容自行伪造“工具返回”。本机离线只能校验结构与哈希，真实性须由宿主实际 History 中的调用、子 Thread 与 Run 回读确认。相同独立审查覆盖整篇。
 
 ## 视觉检查与结果
 

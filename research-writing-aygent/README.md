@@ -9,13 +9,13 @@
 - `scripts/paper.py`、`scripts/paper_result.py`：现有 PDF 服务及前台结果文件的工作区桥接。
 - `references/paper-writing/`：保留的学术写作方法参考。
 - `upstream-SKILL.md`、`source-manifest.json`、`LICENSE`：原始入口、上游来源与 MIT 许可。
-- `ONLINE_EXPORT.json`：本次线上内容 ID 及 27 个原始文件的 SHA-256、大小清单；本文档与该清单是仓库交接附件，不属于原始线上包。
+- `ONLINE_EXPORT.json`：当前线上内容 ID 及 27 个运行文件的 SHA-256、大小清单；本文档与该清单是仓库交接附件，不属于线上运行包。
 
-写作方法来自 `zLanqing/codex-claude-academic-skills`。具体来源提交及文件级归属以原始 `source-manifest.json` 为准；所有原始文件保留线上字节，不作换行或格式转换。
+写作方法来自 `zLanqing/codex-claude-academic-skills`。具体来源提交及文件级归属以原始 `source-manifest.json` 为准；上游原文、许可和来源记录保持原始字节；运行文件与当前线上版本一致，不作换行或格式转换。
 
 ## 改造范围
 
-适配中文论文/综述任务，从冻结用户需求、核验来源和论证规划，到机械检查、真实独立审查、PDF 逐页检查与 `portal-result.json` 交付。不依赖旧 Scout/ARIS 角色包，不生成假审查、虚构数据或学术认证。
+适配中文论文/综述任务，从冻结用户需求、核验来源和论证规划，到机械检查、真实独立审查、PDF 逐页检查与 `portal-result.json` 交付。不生成假审查、虚构数据或学术认证。
 
 ## 运行依赖与边界
 
@@ -25,7 +25,7 @@
 2. `scripts/service-endpoints.json` 保留线上 PDF 服务的私网地址；本地环境必须能访问相应服务，或在另行授权的部署中配置对应地址。
 3. 前台任务需要真实任务 UUID 和 `/workspace/paper-<UUID>` 目录。不能借用其他用户或历史任务的文件。
 4. 不包含云平台密钥、用户账号、需求记录、稿件、任务数据库或前台部署代码。下载本目录不等于获得平台或服务访问权限。
-5. 本次导出未修改线上绑定、Skill、Agent、模型配置或已有任务，也未发起论文生成。
+5. 最初导出未修改线上服务；本次维护仅清理 Skill 运行说明中的过时表述，不改变写作流程、脚本、核验要求、Agent 绑定、模型配置或已有任务，也未发起论文生成。
 
 ## 校验
 

@@ -1,9 +1,9 @@
 {
   "skillName": "research-writing-aygent",
   "skillId": "62997643-1164-488b-91c0-25011dc7b96d",
-  "contentId": "19b01ad6-9955-4d40-ad63-d15f1f55ddb4",
-  "exportedAt": "2026-10-13T06:22:13.901000+00:00",
-  "source": "Read-only export of the currently attached online Skill; not regenerated from upstream.",
+  "contentId": "37b8ba4e-edbe-45d0-b943-38b34cbd86c9",
+  "exportedAt": "2026-10-14T02:08:49.019Z",
+  "source": "Verified readback after scoped runtime documentation cleanup; not regenerated from upstream.",
   "files": [
     {
       "kind": "file",
@@ -16,8 +16,8 @@
       "kind": "file",
       "mode": 420,
       "path": "references/aygent-workflow.md",
-      "sha256": "2927284d247e73d6a5be513d75f14ef587a046c802220bdd5ebf0c59e931b558",
-      "sizeBytes": 4855
+      "sha256": "7e9732d3ecc41b0f7e442f12d70540ad90c51f15a764ea611550698323368a94",
+      "sizeBytes": 4808
     },
     {
       "kind": "file",
@@ -177,8 +177,8 @@
       "kind": "file",
       "mode": 420,
       "path": "SKILL.md",
-      "sha256": "b0e6b49cd1b42630d804cdbf877e2b35da8b336ced95eb070f59d863147e1db0",
-      "sizeBytes": 6624
+      "sha256": "cc532c957ef13c5e6648fd506ac06cfd523095266a0815735e5ebff0dba9381e",
+      "sizeBytes": 6504
     },
     {
       "kind": "file",
@@ -194,5 +194,6 @@
       "sha256": "ce5f25f99ebb01e6d12624dbee1967226ed5b59aa914496bf7b998e9a31a6630",
       "sizeBytes": 4317
     }
-  ]
+  ],
+  "previousContentId": "19b01ad6-9955-4d40-ad63-d15f1f55ddb4"
 }
