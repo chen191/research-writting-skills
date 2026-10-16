@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!ORIGIN.json
+!collect_toolchain.py
+!engine/
+!engine/**
+engine/**/__pycache__
+engine/**/*.pyc

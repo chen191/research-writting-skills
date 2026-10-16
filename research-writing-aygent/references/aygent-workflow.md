@@ -59,6 +59,6 @@ render 保存 paper.pdf、render-receipt.json 和 pdf-contact-sheet.png。previe
 {"verdict":"PASS","pdf_sha256":"当前PDF的SHA256","pages_inspected":[1,2,3],"blocking_issues":[],"notes":"实际逐页观察结论，存在问题时具体定位"}
 ```
 
-页数必须与真实 receipt 完全相同。修改正文、来源或需求后原机械/独立/编译/视觉证据全部失效，必须重做相应阶段。未知编译结果保留 render-request.json，停止并交管理员核实，不自动重发 POST。现有服务只支持既有模板和证据表格，不能编造新模板名、学校身份或偷偷改服务。
+页数必须与真实 receipt 完全相同。修改正文、来源或需求后原机械/独立/编译/视觉证据全部失效，必须重做相应阶段。未知编译结果保留 render-request.json，停止并交管理员核实，不自动重发本地编译命令。runtime 本地编译器只支持既有模板和证据表格，不能编造新模板名、学校身份或偷偷改 runtime。
 
 publish 使用当前前台既有 schema_version=1/status=ready/task_id/pdf.path/sha256/size/checks 四项契约，不改前台代码或认证。模型审查不是学术认证；用户仍需人工核对。

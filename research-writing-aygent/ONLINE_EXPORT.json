@@ -1,9 +1,10 @@
 {
   "skillName": "research-writing-aygent",
   "skillId": "62997643-1164-488b-91c0-25011dc7b96d",
-  "contentId": "37b8ba4e-edbe-45d0-b943-38b34cbd86c9",
-  "exportedAt": "2026-10-14T02:08:49.019Z",
-  "source": "Verified readback after scoped runtime documentation cleanup; not regenerated from upstream.",
+  "contentId": "496319a8-3aff-4cfa-b629-c066cf197dbb",
+  "exportedAt": "2026-10-16T12:55:37.649Z",
+  "source": "Verified raw readback after runtime-local PDF migration; no HTTP compiler fallback.",
+  "runtimeId": "4063f550-a72d-4361-8474-8abcba96d318",
   "files": [
     {
       "kind": "file",
@@ -13,11 +14,26 @@
       "sizeBytes": 1066
     },
     {
+      "kind": "directory",
+      "mode": 493,
+      "path": "references"
+    },
+    {
       "kind": "file",
       "mode": 420,
       "path": "references/aygent-workflow.md",
-      "sha256": "7e9732d3ecc41b0f7e442f12d70540ad90c51f15a764ea611550698323368a94",
-      "sizeBytes": 4808
+      "sha256": "762386c80d36c6a6a74f72c968b873ae85f86657ede7f5e060e069264e5ad225",
+      "sizeBytes": 4834
+    },
+    {
+      "kind": "directory",
+      "mode": 493,
+      "path": "references/paper-writing"
+    },
+    {
+      "kind": "directory",
+      "mode": 493,
+      "path": "references/paper-writing/author_profile"
     },
     {
       "kind": "file",
@@ -69,6 +85,11 @@
       "sizeBytes": 16780
     },
     {
+      "kind": "directory",
+      "mode": 493,
+      "path": "references/paper-writing/figure_templates"
+    },
+    {
       "kind": "file",
       "mode": 420,
       "path": "references/paper-writing/figure_templates/figure_spec_template.md",
@@ -95,6 +116,11 @@
       "path": "references/paper-writing/figure_templates/venue_styles.md",
       "sha256": "1f3ab5d8489e12fbcb9fae85a4d1a941d91b9c100b450cafed6a582a596fef84",
       "sizeBytes": 5072
+    },
+    {
+      "kind": "directory",
+      "mode": 493,
+      "path": "references/paper-writing/section_rhetorical_moves"
     },
     {
       "kind": "file",
@@ -125,6 +151,11 @@
       "sizeBytes": 3122
     },
     {
+      "kind": "directory",
+      "mode": 493,
+      "path": "references/paper-writing/writing_checklists"
+    },
+    {
       "kind": "file",
       "mode": 420,
       "path": "references/paper-writing/writing_checklists/design_questions.md",
@@ -153,6 +184,11 @@
       "sizeBytes": 2036
     },
     {
+      "kind": "directory",
+      "mode": 493,
+      "path": "scripts"
+    },
+    {
       "kind": "file",
       "mode": 420,
       "path": "scripts/paper_result.py",
@@ -163,22 +199,29 @@
       "kind": "file",
       "mode": 420,
       "path": "scripts/paper.py",
-      "sha256": "0b21add57637ab9bbd03e8272e1d9854b9e88851589624287c427d9b2774ea58",
-      "sizeBytes": 14212
+      "sha256": "f125072e6a78670b426906cfaa65efa100961aac2d89a5e963f4d0f72175a4b4",
+      "sizeBytes": 13040
+    },
+    {
+      "kind": "file",
+      "mode": 420,
+      "path": "scripts/runtime_transport.py",
+      "sha256": "80d5d1dc9214b2ccbf38b3c8858c2178a9445debe0bf79fff905743f78b2d8d7",
+      "sizeBytes": 2398
     },
     {
       "kind": "file",
       "mode": 420,
       "path": "scripts/service-endpoints.json",
-      "sha256": "36a82b2fc06969003e1f2216c95fbd285882c2f8d63d5eafba1a02b103dd73eb",
-      "sizeBytes": 43
+      "sha256": "b804dd321a2391e497ea72d0e194d3eb175d24c2015ff74b3aafa3beebe0beaf",
+      "sizeBytes": 113
     },
     {
       "kind": "file",
       "mode": 420,
       "path": "SKILL.md",
-      "sha256": "cc532c957ef13c5e6648fd506ac06cfd523095266a0815735e5ebff0dba9381e",
-      "sizeBytes": 6504
+      "sha256": "8d6dfb387fe58432b0a10a454bb9a00cb0d8848685bb2cd269e5c95d417d3bd1",
+      "sizeBytes": 7067
     },
     {
       "kind": "file",
@@ -194,6 +237,5 @@
       "sha256": "ce5f25f99ebb01e6d12624dbee1967226ed5b59aa914496bf7b998e9a31a6630",
       "sizeBytes": 4317
     }
-  ],
-  "previousContentId": "19b01ad6-9955-4d40-ad63-d15f1f55ddb4"
+  ]
 }

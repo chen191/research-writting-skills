@@ -5,10 +5,9 @@ import json
 from pathlib import Path
 import re
 import sys
-from urllib.error import HTTPError
 from urllib.parse import urlsplit
-from urllib.request import Request, urlopen
 import uuid
+from runtime_transport import call as runtime_call, artifact as runtime_artifact
 
 MAX_BYTES = 64 * 1024 * 1024
 
@@ -79,24 +78,6 @@ def inputs(work):
     return req, sources, hashes
 
 
-def service():
-    value = read(Path(__file__).with_name('service-endpoints.json'))['pdf_base_url']
-    url = urlsplit(value)
-    require(url.scheme in ('http', 'https') and url.hostname and not url.username and not url.password
-            and not url.query and not url.fragment and url.path in ('', '/'), 'Invalid private compiler endpoint')
-    return value.rstrip('/')
-
-
-def http_json(path, value=None):
-    payload = None if value is None else json.dumps(value, ensure_ascii=False).encode()
-    req = Request(service() + path, data=payload, headers={'Content-Type': 'application/json'})
-    try:
-        with urlopen(req, timeout=150) as response:
-            return json.load(response)
-    except HTTPError as error:
-        raise RuntimeError('Compiler HTTP ' + str(error.code) + ': ' + error.read(8192).decode('utf-8', errors='replace')) from None
-
-
 def render_input(work):
     req, sources, hashes = inputs(work)
     # Preserve CRLF bytes: the compiler hashes the submitted UTF-8 string, not universal-newline text.
@@ -108,7 +89,7 @@ def render_input(work):
 
 def check(work):
     value, hashes = render_input(work)
-    report = http_json('/v1/check', {k: value[k] for k in ('markdown', 'sources', 'requirements')})
+    report = runtime_call('check', {k: value[k] for k in ('markdown', 'sources', 'requirements')})
     require(isinstance(report, dict) and report.get('manuscript_sha256') == hashes['manuscript'], 'Mechanical response not bound to manuscript')
     body = report.get('body_chinese_count_less_exact_repeats')
     if report.get('passed') is True and (type(body) is not int or body < request(work)['word_target']):
@@ -165,43 +146,32 @@ def approved(work):
     return report, hashes
 
 
-def download(path):
-    require(re.fullmatch(r'/paper-delivery/files/[a-f0-9]{64}/(?:[a-z-]+\.(?:pdf|png|json)|preview/[1-9]\d{0,2}\.png)', path), 'Untrusted compiler artifact path')
-    with urlopen(service() + path, timeout=120) as response:
-        raw = response.read(MAX_BYTES + 1)
-    require(len(raw) <= MAX_BYTES, 'Compiler artifact exceeds limit')
-    return raw
-
-
 def render(work):
     audit, hashes = approved(work)
-    require(not (work / 'render-request.json').exists(), 'Prior render exists or outcome unknown; do not replay POST')
+    require(not (work / 'render-request.json').exists(), 'Prior render exists or outcome unknown; do not replay compilation')
     value, _ = render_input(work)
     value['audit'] = {'verdict': 'PASS', 'blocking_issues': [], 'scope': audit['scope']}
     write(work / 'render-request.json', {'input_hashes': hashes, 'input': value}, exclusive=True)
-    receipt = http_json('/v1/render', value)
+    receipt = runtime_call('render', value, work)
+    require(receipt.get('backend') == 'runtime-local-v1', 'Unexpected compiler backend')
     require(receipt.get('status') == 'completed' and receipt.get('execution') == 'xelatex_pdf', 'No successful PDF compilation')
     require(type(receipt.get('pages')) is int and 1 <= receipt['pages'] <= 150, 'Invalid page count')
     require(receipt.get('template') == value['template'], 'Compiler changed user template')
-    urls = receipt.get('files', {})
-    require({'paper.pdf', 'pdf-contact-sheet.png'} <= set(urls), 'Missing compiled artifacts')
+    files = receipt.get('files', {})
+    require({'paper.pdf', 'pdf-contact-sheet.png'} <= set(files), 'Missing compiled artifacts')
     paths = {}
     for name in ('paper.pdf', 'pdf-contact-sheet.png', 'pdf-inspection.json'):
-        if name not in urls:
+        if name not in files:
             continue
-        parsed = urlsplit(urls[name])
-        require(parsed.scheme in ('http', 'https') and not parsed.username and not parsed.password
-                and not parsed.query and not parsed.fragment, 'Unsafe compiler artifact URL')
-        # Ignore advertised host; transfer only its validated token path through the configured private compiler.
-        require(Path(parsed.path).name == name, 'Artifact filename mismatch')
-        raw = download(parsed.path)
+        raw = runtime_artifact(work, files[name], name)
         if name == 'paper.pdf':
             require(raw.startswith(b'%PDF-') and sha(raw) == receipt.get('sha256')
                     and len(raw) == receipt.get('size_bytes'), 'PDF receipt mismatch')
         else:
             require(raw.startswith(b'\x89PNG\r\n\x1a\n') if name.endswith('.png') else isinstance(json.loads(raw), dict), 'Invalid preview artifact')
+        require(not (work / name).is_symlink(), 'Unsafe local artifact destination')
         (work / name).write_bytes(raw)
-        paths[name] = parsed.path
+        paths[name] = files[name]
     receipt.pop('files', None)
     receipt['input_hashes'] = hashes
     write(work / 'render-receipt.json', receipt)
@@ -220,17 +190,19 @@ def compiled(work):
 
 def preview(work):
     receipt = compiled(work)
-    path = read(work / 'artifact-paths.json')['paper.pdf']
-    require(re.fullmatch(r'/paper-delivery/files/[a-f0-9]{64}/paper\.pdf', path), 'Invalid PDF artifact path')
+    result = runtime_call('preview', {'sha256':receipt['sha256'], 'pages':receipt['pages']}, work)
+    require(result.get('backend') == 'runtime-local-v1' and result.get('pdf_sha256') == receipt['sha256'], 'Preview backend/PDF mismatch')
     folder = work / 'preview'
-    folder.mkdir(exist_ok=True)
     pages = {}
     for number in range(1, receipt['pages'] + 1):
-        raw = download(path.removesuffix('paper.pdf') + 'preview/' + str(number) + '.png')
+        file = folder / (str(number) + '.png')
+        require(not folder.is_symlink() and not file.is_symlink(), 'Unsafe local preview path')
+        raw = file.read_bytes()
         require(raw.startswith(b'\x89PNG\r\n\x1a\n'), 'Invalid page preview')
-        (folder / (str(number) + '.png')).write_bytes(raw)
+        require(sha(raw) == result.get('pages', {}).get(str(number)), 'Local page preview hash mismatch')
         pages[str(number)] = sha(raw)
-    result = {'pdf_sha256': receipt['sha256'], 'pages': pages}
+    require(set(result['pages']) == set(pages), 'Unexpected preview pages')
+    result = {'pdf_sha256': receipt['sha256'], 'pages': pages, 'backend':'runtime-local-v1'}
     write(work / 'previews.json', result)
     return {'pages_downloaded': len(pages), 'visual_review_done': False}
 

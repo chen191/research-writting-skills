@@ -1,2 +1,6 @@
 # Preserve the exact bytes of the online Skill snapshot.
 research-writing-aygent/** -text
+# Preserve the compiler hashes and the Runtime source bytes across checkouts.
+aygent-paper-runtime/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# The original module's final blank line is included in ORIGIN.json's byte hash.
+aygent-paper-runtime/engine/template_profiles.py whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

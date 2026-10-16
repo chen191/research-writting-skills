@@ -1,0 +1,36 @@
+{
+  "source": "Current private paper PDF compiler image",
+  "sourceImage": "sha256:b5910a43a1ade7aa32c2175132beafb9c51fcbbe3942d108ab56fdab79514dcb",
+  "baseRuntime": "ghcr.io/aygenta-ai/aygenta-runtime-base@sha256:195c008a7cee9e33d042ab2af04da355b801afed412b192fd5c04d0af15d4ee3",
+  "scope": "Four unchanged engine modules, preserved provenance, exact extracted input validator; no HTTP server/pipeline/model clients/user data",
+  "files": {
+    "latex_render.py": {
+      "sha256": "064312f993bf2c7604d0ffabb19b6480c8fd283bf6c1bcdd8152d1e99b2bedb9",
+      "sizeBytes": 21413
+    },
+    "mechanics.py": {
+      "sha256": "77c1795eb3e127ff4e8c0f4d5cf159eec8ba425951a740d2cc38eecae680e54f",
+      "sizeBytes": 13656
+    },
+    "pdf_preview.py": {
+      "sha256": "03c62a5cb695f413031fb5c45f22e8b32961533902b380f06acc74be9b3b11dd",
+      "sizeBytes": 3867
+    },
+    "template_profiles.py": {
+      "sha256": "0d0643b79015449d131882c805f6da4406327aa2ff64ee0f9b359747949248e2",
+      "sizeBytes": 2396
+    },
+    "validation.py": {
+      "sha256": "399c5d1538b1c4636650c9a6787dc482c03e309e2ba8b53ca5398419b273d247",
+      "sizeBytes": 2836
+    },
+    "template-provenance/LICENSE": {
+      "sha256": "293ee34b20dfd594d7baf048140b99a6a211a47af9f0de2063ae81e2fab96746",
+      "sizeBytes": 11340
+    },
+    "template-provenance/test-provenance.json": {
+      "sha256": "a27cf610b0b88dbcba112738e06e7360161936972f23e0211ca9375cb1a5ff1c",
+      "sizeBytes": 357
+    }
+  }
+}

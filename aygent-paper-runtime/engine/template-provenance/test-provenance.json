@@ -1,0 +1,13 @@
+{
+  "purpose": "isolated formatting test, not a submitted thesis",
+  "template": "sjtug/SJTUThesis",
+  "template_archive_sha256": "9e018e47e69d6a65fd8f39336f07fe2458e92377b6081848b2665fa13c8b6016",
+  "archive_revision_prefix": "507a8c8",
+  "requires": [
+    "SJTUTeX",
+    "XeLaTeX",
+    "biber",
+    "biblatex-gb7714-2015",
+    "Fandol"
+  ]
+}
